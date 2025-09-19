@@ -1,9 +1,12 @@
-    FROM cimg/go:1.24
+FROM cimg/go:1.24 as builder
 
-    RUN useradd -ms /bin/bash apprunner
-    USER apprunner
-    WORKDIR /home/apprunner
-    RUN git clone https://github.com/navarrastar/dex
-    WORKDIR /home/apprunner/dex
+WORKDIR /app
 
-    CMD go run src/main.go
+RUN git clone https://github.com/navarrastar/dex
+RUN go build -o /main ./src/main.go
+
+FROM scratch
+
+COPY --from=builder /main /main
+
+CMD /main
