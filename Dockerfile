@@ -27,7 +27,7 @@
     WORKDIR /home/apprunner/Odin
     # NEEDED?????
     ENV CC=clang-18 \
-        CXX=clang++18 \
+        CXX=clang++-18 \
         LLVM_CONFIG=/usr/bin/llvm-config-18
 
     RUN make release-native

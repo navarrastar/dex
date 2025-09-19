@@ -3,7 +3,7 @@ package main
 import "core:fmt"
 import "core:net"
 
-import "shared:http"
+import "../http"
 
 
 
