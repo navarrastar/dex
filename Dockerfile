@@ -45,4 +45,4 @@
     CMD ["odin", "run", "src/", "-o:speed"]
 
     COPY src ./src
-    EXPOSE 3000
+    EXPOSE 3001
