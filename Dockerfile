@@ -1,4 +1,4 @@
-    FROM debian:latest
+    FROM ubuntu:latest
 
     RUN apt-get update && \
         apt-get install -y --no-install-recommends \
@@ -42,4 +42,4 @@
     WORKDIR /home/apprunner/dex
 
     # Odin run server command
-    # CMD ["odin", "run", "src/", "-o:speed"]
+    CMD ["odin", "run", "src/", "-o:speed"]

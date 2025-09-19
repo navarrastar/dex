@@ -1,6 +1,6 @@
 package main
 
-import "core:fmt"
+//import "core:fmt"
 //import "core:net"
 //import "../http"
 
@@ -8,7 +8,7 @@ import "core:fmt"
 
 main :: proc() {
 
-    fmt.println("Hello1")
+    //fmt.println("Hello1")
 
     for {
 
@@ -39,5 +39,3 @@ main :: proc() {
 // routeproc_ping :: proc(req: ^http.Request, res: ^http.Response) {
 //     http.respond_plain(res, "pong")
 // }
-
-
