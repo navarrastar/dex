@@ -6,7 +6,7 @@
     {
       "label": "run server",
       "type": "shell",
-      "command": "odin run src/",
+      "command": "odin run src/ -debug",
       "problemMatcher": [],
       "group": {
         "kind": "build",
