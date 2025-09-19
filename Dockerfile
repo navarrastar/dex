@@ -42,7 +42,4 @@
     WORKDIR /home/apprunner/dex
 
     # Odin run server command
-    CMD ["odin", "run", "src/", "-o:speed"]
-
-    COPY src ./src
-    EXPOSE 3001
+    # CMD ["odin", "run", "src/", "-o:speed"]

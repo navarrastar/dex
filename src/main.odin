@@ -1,10 +1,8 @@
 package main
 
 import "core:fmt"
-import "core:net"
-import "core:thread"
-
-import "../http"
+//import "core:net"
+//import "../http"
 
 
 
@@ -38,8 +36,8 @@ main :: proc() {
     // fmt.println("Hello2")
 }
 
-routeproc_ping :: proc(req: ^http.Request, res: ^http.Response) {
-    http.respond_plain(res, "pong")
-}
+// routeproc_ping :: proc(req: ^http.Request, res: ^http.Response) {
+//     http.respond_plain(res, "pong")
+// }
 
 
