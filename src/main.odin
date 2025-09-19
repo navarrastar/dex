@@ -6,7 +6,6 @@ import "../http"
 
 
 main :: proc() {
-
     server: http.Server
     http.server_shutdown_on_interrupt(&server)
 
@@ -24,9 +23,6 @@ main :: proc() {
     }
 
     err := http.listen_and_serve(&server, routed, endpoint)
-    fmt.assertf(err == nil, "server stopped with error: %v", err)
-
-    fmt.println("Hello2")
 }
 
 routeproc_ping :: proc(req: ^http.Request, res: ^http.Response) {
