@@ -4,6 +4,8 @@ services:
     build: .
     ports:
       - "3001:3001"
+    networks:
+      - deadlock-network
 
   deadlock-live-events:
     image: ghcr.io/deadlock-api/deadlock-live-events:latest
@@ -11,3 +13,9 @@ services:
     env_file: .env
     ports:
       - "3000:3000"
+    networks:
+      - deadlock-network
+
+networks:
+  deadlock-network:
+    driver: bridge
