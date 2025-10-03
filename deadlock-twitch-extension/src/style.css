@@ -1,0 +1,237 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 35vh;
+  left: 10vw;
+}
+
+#app {
+  align-items: center;
+}
+
+.app-logo {
+  width: 64px;
+  height: 64px;
+
+  user-select: none;
+}
+
+#app-menu {
+  display: none;
+}
+
+
+/* ---------------------------- */
+/* App Menu Styles              */
+/* ---------------------------- */
+
+#app-menu .app-menu-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+#app-menu .menu-entry {
+  position: relative;
+}
+
+#app-menu .menu-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#app-menu .menu-icon:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#app-menu .menu-icon-fallback {
+  font-size: 16px;
+}
+
+/* Base panel styles */
+#app-menu .menu-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  min-width: 220px;
+  max-width: 280px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  z-index: 5;
+}
+
+/* Right positioning (default) */
+#app-menu .menu-panel.panel-right {
+  right: 48px; /* flush against the 48px icon to avoid a hover gap */
+}
+
+/* Left positioning */
+#app-menu .menu-panel.panel-left {
+  left: 48px; /* flush against the 48px icon to avoid a hover gap */
+}
+
+/* Keep panel visible while hovering panel itself */
+#app-menu .menu-entry:hover > .menu-panel,
+#app-menu .menu-panel:hover {
+  display: block;
+}
+
+#app-menu .panel-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#app-menu .items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+#app-menu .item {
+  height: 36px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px;
+}
+
+#app-menu .item.placeholder {
+  opacity: 0.6;
+}
+
+#app-menu .settings-panel .settings-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#app-menu .settings-panel .label {
+  opacity: 0.7;
+  min-width: 60px;
+}
+
+#app-menu .settings-panel .match-id-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+#app-menu .settings-panel .match-id-input {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+#app-menu .settings-panel .match-id-input:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
+}
+
+#app-menu .settings-panel .edit-button {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app-menu .settings-panel .edit-button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+#app-menu .settings-panel .refresh-button {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+#app-menu .settings-panel .refresh-button:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+
+#app-menu .settings-panel .refresh-button:active {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(1px);
+}
+
+#app-menu .settings-panel .refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#app-menu .settings-panel .refresh-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+#app-menu .settings-panel .refresh-button:hover .refresh-icon {
+  transform: rotate(180deg);
+}
+

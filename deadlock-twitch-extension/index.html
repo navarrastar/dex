@@ -4,11 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
     <title>deadlock-twitch-extension</title>
+
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="app">
+      <div id="app-logo">
+
+      </div>
+
+      <div id="app-menu">
+        <a>app-menu</a>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
